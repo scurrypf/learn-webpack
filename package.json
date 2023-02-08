@@ -1,0 +1,25 @@
+{
+  "name": "webpack-config",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rimraf ./dist && webpack --config webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rmdir": "^1.2.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.2.47",
+    "css-loader": "^6.7.3",
+    "rimraf": "^4.1.2",
+    "style-loader": "^3.3.1",
+    "vue": "^3.2.47",
+    "vue-loader": "^17.0.1"
+  }
+}
