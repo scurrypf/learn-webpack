@@ -10,11 +10,11 @@ module.exports = {
     entry:'./src/main.js',
     // 文件输出
     output:{
-        path:path.join(__dirname,'dist'),
+        path:path.join(__dirname,'../dist'),
         filename:'js/[name].[contenthash:8].js'
     },
-    // 模式
-    mode: 'production',
+    // // 模式
+    // mode: 'production',
     // loader
     module: {
         rules: [
@@ -84,5 +84,26 @@ module.exports = {
     externalsType: 'window',
     externals: {
         vue: 'Vue'
+    },
+    optimization: {
+        // 自动分包
+        splitChunks: {
+            cacheGroups: {
+                defaultVendors: {
+                    name: 'chunk-vendors',
+                    test: /[\\/]node_modules[\\/]/,
+                    priority: -10,
+                    chunks: 'initial'
+                },
+                common: {
+                    name: 'chunk-common',
+                    minChunks: 2,
+                    priority: -20,
+                    chunks: 'initial',
+                    reuseExistingChunk: true
+                }
+            }
+        },
+
     },
 }
